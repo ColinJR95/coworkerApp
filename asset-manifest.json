@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a515619a.chunk.css",
+    "main.js": "/static/js/main.ac136118.chunk.js",
+    "main.js.map": "/static/js/main.ac136118.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e77b7633.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e77b7633.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.81980bc3.chunk.js": "/static/js/2.81980bc3.chunk.js",
+    "static/js/2.81980bc3.chunk.js.map": "/static/js/2.81980bc3.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d9f267d546641f31cd4f84a0b1b0f6a3.js": "/precache-manifest.d9f267d546641f31cd4f84a0b1b0f6a3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.a515619a.chunk.css.map": "/static/css/main.a515619a.chunk.css.map",
+    "static/js/2.81980bc3.chunk.js.LICENSE.txt": "/static/js/2.81980bc3.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/harryp__-webfont.ebc52830.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e77b7633.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.81980bc3.chunk.js",
+    "static/css/main.a515619a.chunk.css",
+    "static/js/main.ac136118.chunk.js"
+  ]
+}
