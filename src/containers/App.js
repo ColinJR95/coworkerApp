@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Cardlist from '../components/Cardlist';
-// import { robots } from './robots';
+import { connect } from 'react-redux';
 import Searchbox from '../components/Searchbox';
 import Scroll from '../components/Scroll';
 import './App.css';
 import ErrorBoundry from '../components/ErrorBoundry';
+import { setSearchField, requestRobots } from '../action';
 
 
 // const state = {
@@ -12,36 +13,42 @@ import ErrorBoundry from '../components/ErrorBoundry';
 //   searchfield: ''
 // }
 
+const mapStatetoProps = state => {
+  return {
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error 
+  }
+}
+
+const mapDispatchtoProps = (dispatch) => {
+  return {
+
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onRequestRobots: () => dispatch(requestRobots())
+  }
+  }
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      robots: [],
-      searchfield: ''
-    }
-  }
-    componentDidMount() {
-      fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-        .then(users => {this.setState({ robots: users})});
-      }
 
-  onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value })
-  }
+    componentDidMount() {
+      this.props.onRequestRobots()
+      } 
 
   render() {
-    const filteredfriends = this.state.robots.filter(robots =>{
-      return robots.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
+    // const { robots } = this.state;
+    const {searchField, onSearchChange, robots, isPending} = this.props; 
+    const filteredfriends = robots.filter(robots =>{
+      return robots.name.toLowerCase().includes(searchField.toLowerCase())
     }) 
-    if (this.state.robots.length === 0) {
+    if (isPending === 1) {
       return <h1>Loading</h1>
     } else {
       return ( 
         <div className='tc'>
-          <h1 className = 'f1'>Bike Friends </h1>
-          <Searchbox searchChange= {this.onSearchChange}/>
+          <h1 className = 'f1'>Co-workers </h1>
+          <Searchbox searchChange= {onSearchChange}/>
           <Scroll>
             <ErrorBoundry>
               <Cardlist robots={filteredfriends} />
@@ -54,4 +61,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default connect(mapStatetoProps, mapDispatchtoProps)(App); 
