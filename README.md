@@ -1,1 +1,1 @@
-Welcome to my react + redux app! I created an app that allows your to filter through a database of users. It is currently accessing the api to access the robot icons.  It is a responsive web app give it a try. 
+Welcome to my react + redux app! I created an app that allows your to filter through a database of users. It is currently accessing the api to access the robot icons.  It is a responsive web app give it a try!!
